@@ -6,6 +6,7 @@ target 'Client' do
   use_frameworks!
 
   # Pods for Client
+  pod 'SwiftLint'
 
   target 'ClientTests' do
     inherit! :search_paths
