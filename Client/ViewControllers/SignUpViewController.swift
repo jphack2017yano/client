@@ -1,5 +1,5 @@
 //
-//  TopViewController.swift
+//  SignUpViewController.swift
 //  Client
 //
 //  Created by 会津慎弥 on 2017/10/22.
@@ -8,17 +8,21 @@
 
 import UIKit
 
-class TopViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var mailAddressTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        userNameTextField.addBorderBottom(height: 1.0, color: UIColor.gray)
+        mailAddressTextField.addBorderBottom(height: 1.0, color: UIColor.gray)
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
