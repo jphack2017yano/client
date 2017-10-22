@@ -26,6 +26,15 @@ class TopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func switchToPhotoList(_ sender: UIButton) {
+        
+        if !User().isUserSignedIn() {
+            UIAlertController(title: "ユーザ登録されていません", message: "ユーザ登録を行ってください", preferredStyle: .alert)
+                .addAction(title: "OK")
+                .show()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

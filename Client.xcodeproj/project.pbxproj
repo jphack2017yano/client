@@ -12,6 +12,10 @@
 		0D36B34E1F9C347000C8B91A /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B34D1F9C347000C8B91A /* UITextField+Extension.swift */; };
 		0D36B3501F9C34FC00C8B91A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B34F1F9C34FC00C8B91A /* SignUpViewController.swift */; };
 		0D36B3521F9C38C400C8B91A /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B3511F9C38C400C8B91A /* PhotoListViewController.swift */; };
+		0D36B3551F9C3C3300C8B91A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B3541F9C3C3300C8B91A /* User.swift */; };
+		0D36B3581F9C3C8800C8B91A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B3571F9C3C8800C8B91A /* Constant.swift */; };
+		0D36B35B1F9C3D6300C8B91A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B3591F9C3D6200C8B91A /* UIApplication+Extension.swift */; };
+		0D36B35C1F9C3D6300C8B91A /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B35A1F9C3D6300C8B91A /* UIAlertController+Extension.swift */; };
 		0DB110941F9BC8A300E5C68A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB110931F9BC8A300E5C68A /* AppDelegate.swift */; };
 		0DB110991F9BC8A300E5C68A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB110971F9BC8A300E5C68A /* Main.storyboard */; };
 		0DB1109B1F9BC8A300E5C68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB1109A1F9BC8A300E5C68A /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 		0D36B34D1F9C347000C8B91A /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Extension.swift"; path = "Client/Extensions/UITextField+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		0D36B34F1F9C34FC00C8B91A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0D36B3511F9C38C400C8B91A /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		0D36B3541F9C3C3300C8B91A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0D36B3571F9C3C8800C8B91A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0D36B3591F9C3D6200C8B91A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extension.swift"; path = "Client/Extensions/UIApplication+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		0D36B35A1F9C3D6300C8B91A /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Extension.swift"; path = "Client/Extensions/UIAlertController+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		0DB110901F9BC8A300E5C68A /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB110931F9BC8A300E5C68A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB110981F9BC8A300E5C68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,10 +126,28 @@
 		0D36B34C1F9C346100C8B91A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0D36B35A1F9C3D6300C8B91A /* UIAlertController+Extension.swift */,
+				0D36B3591F9C3D6200C8B91A /* UIApplication+Extension.swift */,
 				0D36B34D1F9C347000C8B91A /* UITextField+Extension.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0D36B3531F9C3C1100C8B91A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D36B3541F9C3C3300C8B91A /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0D36B3561F9C3C7900C8B91A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0D36B3571F9C3C8800C8B91A /* Constant.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		0DB110871F9BC8A300E5C68A = {
@@ -149,8 +175,10 @@
 		0DB110921F9BC8A300E5C68A /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				0D36B34C1F9C346100C8B91A /* Extensions */,
 				0DB110931F9BC8A300E5C68A /* AppDelegate.swift */,
+				0D36B3561F9C3C7900C8B91A /* Utils */,
+				0D36B3531F9C3C1100C8B91A /* Models */,
+				0D36B34C1F9C346100C8B91A /* Extensions */,
 				0D36B3431F9C336A00C8B91A /* ViewControllers */,
 				0DB110971F9BC8A300E5C68A /* Main.storyboard */,
 				0DB1109A1F9BC8A300E5C68A /* Assets.xcassets */,
@@ -496,8 +524,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D36B35C1F9C3D6300C8B91A /* UIAlertController+Extension.swift in Sources */,
+				0D36B3581F9C3C8800C8B91A /* Constant.swift in Sources */,
 				0D36B3521F9C38C400C8B91A /* PhotoListViewController.swift in Sources */,
+				0D36B35B1F9C3D6300C8B91A /* UIApplication+Extension.swift in Sources */,
 				0D36B34E1F9C347000C8B91A /* UITextField+Extension.swift in Sources */,
+				0D36B3551F9C3C3300C8B91A /* User.swift in Sources */,
 				0DB110941F9BC8A300E5C68A /* AppDelegate.swift in Sources */,
 				0D36B3501F9C34FC00C8B91A /* SignUpViewController.swift in Sources */,
 				0D36B3491F9C336A00C8B91A /* TopViewController.swift in Sources */,
