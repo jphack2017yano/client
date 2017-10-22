@@ -703,7 +703,7 @@
 				DEVELOPMENT_TEAM = H543XE4ASB;
 				INFOPLIST_FILE = Client/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jphack2017.sendai.07.Client;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jphack2017-07.sendai.Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -719,7 +719,7 @@
 				DEVELOPMENT_TEAM = H543XE4ASB;
 				INFOPLIST_FILE = Client/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jphack2017.sendai.07.Client;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jphack2017-07.sendai.Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
