@@ -30,6 +30,11 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signIn(_ sender: UIButton) {
+        User().setUserInfo(name: userNameTextField.text!, address: mailAddressTextField.text!)
+        performSegue(withIdentifier: "backToTop", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

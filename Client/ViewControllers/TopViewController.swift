@@ -32,6 +32,8 @@ class TopViewController: UIViewController {
             UIAlertController(title: "ユーザ登録されていません", message: "ユーザ登録を行ってください", preferredStyle: .alert)
                 .addAction(title: "OK")
                 .show()
+        } else {
+            performSegue(withIdentifier: "toPhotoList", sender: nil)
         }
     }
     
