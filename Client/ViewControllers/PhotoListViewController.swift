@@ -14,6 +14,8 @@ class PhotoListViewController: UIViewController {
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
+    var selectedImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,5 +78,27 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
+    }
+    
+    // Cell が選択された場合
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        // [indexPath.row] から画像名を探し、UImage を設定
+        selectedImage = UIImage(named: photos[(indexPath as NSIndexPath).row])
+        if selectedImage != nil {
+            // SubViewController へ遷移するために Segue を呼び出す
+            performSegue(withIdentifier: "toDetail",sender: nil)
+        }
+        
+    }
+    
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toDetail") {
+            let photoDetailViewController: PhotoDetailViewController = (segue.destination as? PhotoDetailViewController)!
+            
+            photoDetailViewController.selectedImg = selectedImage
+        }
     }
 }

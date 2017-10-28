@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C80226BE9BA3146A8DB44F8 /* Pods_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A84AB9BE191581816A15D /* Pods_ClientTests.framework */; };
+		0D18434E1FA4DE35009E37D6 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D18434D1FA4DE35009E37D6 /* PhotoDetailViewController.swift */; };
 		0D36B3491F9C336A00C8B91A /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B3461F9C336A00C8B91A /* TopViewController.swift */; };
 		0D36B34E1F9C347000C8B91A /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B34D1F9C347000C8B91A /* UITextField+Extension.swift */; };
 		0D36B3501F9C34FC00C8B91A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B34F1F9C34FC00C8B91A /* SignUpViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D18434D1FA4DE35009E37D6 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		0D36B3461F9C336A00C8B91A /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		0D36B34D1F9C347000C8B91A /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Extension.swift"; path = "Client/Extensions/UITextField+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		0D36B34F1F9C34FC00C8B91A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				0D36B3511F9C38C400C8B91A /* PhotoListViewController.swift */,
 				0DB064D01FA4579000BFA115 /* AnalysisViewController.swift */,
 				0DB064D21FA4757C00BFA115 /* CompleteSignupViewController.swift */,
+				0D18434D1FA4DE35009E37D6 /* PhotoDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				0D36B3521F9C38C400C8B91A /* PhotoListViewController.swift in Sources */,
 				0DB064D31FA4757C00BFA115 /* CompleteSignupViewController.swift in Sources */,
 				0D36B35B1F9C3D6300C8B91A /* UIApplication+Extension.swift in Sources */,
+				0D18434E1FA4DE35009E37D6 /* PhotoDetailViewController.swift in Sources */,
 				0DB064D11FA4579000BFA115 /* AnalysisViewController.swift in Sources */,
 				0D36B34E1F9C347000C8B91A /* UITextField+Extension.swift in Sources */,
 				0D36B3551F9C3C3300C8B91A /* User.swift in Sources */,

@@ -134,10 +134,38 @@
                     <navigationItem key="navigationItem" title="Photo Library" id="jah-Ch-0BB"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="Urs-uD-omV" id="uwp-1s-YbR"/>
+                        <segue destination="Xqr-u8-z6L" kind="show" identifier="toDetail" id="X3E-Xa-Obl"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2437.5999999999999" y="517.6911544227886"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="ZHD-yc-eyS">
+            <objects>
+                <viewController id="Xqr-u8-z6L" customClass="PhotoDetailViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O8p-l8-GPu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M29-h4-ebS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Vhe-Pv-zXg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="LDa-4e-6VC">
+                        <barButtonItem key="rightBarButtonItem" title="Download" id="3UK-5p-Ctv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="M29-h4-ebS" id="hn5-ZY-42n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWG-iI-zae" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3165.5999999999999" y="516.79160419790105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4a-Ms-l7V">
