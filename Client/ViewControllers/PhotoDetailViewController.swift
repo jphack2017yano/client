@@ -31,6 +31,27 @@ class PhotoDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func downloadImage(_ sender: UIBarButtonItem) {
+        UIImageWriteToSavedPhotosAlbum(selectedImg, self, #selector(self.showResultOfSaveImage(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    // 保存を試みた結果をダイアログで表示
+    @objc func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
+        
+        var title = "保存完了"
+        var message = "カメラロールに保存しました"
+        
+        if error != nil {
+            title = "エラー"
+            message = "保存に失敗しました"
+        }
+        
+        UIAlertController(title: title, message: message, preferredStyle: .alert)
+            .addAction(title: "OK")
+            .show()
+        
+    }
+    
     /*
     // MARK: - Navigation
 

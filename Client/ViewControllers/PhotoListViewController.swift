@@ -88,16 +88,15 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
         selectedImage = UIImage(named: photos[(indexPath as NSIndexPath).row])
         if selectedImage != nil {
             // SubViewController へ遷移するために Segue を呼び出す
-            performSegue(withIdentifier: "toDetail",sender: nil)
+            performSegue(withIdentifier: "toDetail", sender: nil)
         }
         
     }
     
     // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if (segue.identifier == "toDetail") {
+        if segue.identifier == "toDetail" {
             let photoDetailViewController: PhotoDetailViewController = (segue.destination as? PhotoDetailViewController)!
-            
             photoDetailViewController.selectedImg = selectedImage
         }
     }

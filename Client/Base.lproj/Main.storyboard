@@ -157,7 +157,11 @@
                         <viewLayoutGuide key="safeArea" id="Vhe-Pv-zXg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="LDa-4e-6VC">
-                        <barButtonItem key="rightBarButtonItem" title="Download" id="3UK-5p-Ctv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Download" id="3UK-5p-Ctv">
+                            <connections>
+                                <action selector="downloadImage:" destination="Xqr-u8-z6L" id="Cfe-tn-nNB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="M29-h4-ebS" id="hn5-ZY-42n"/>
