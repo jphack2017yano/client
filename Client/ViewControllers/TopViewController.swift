@@ -26,17 +26,6 @@ class TopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func switchToPhotoList(_ sender: UIButton) {
-        
-        if !User().isUserSignedIn() {
-            UIAlertController(title: "ユーザ登録されていません", message: "ユーザ登録を行ってください", preferredStyle: .alert)
-                .addAction(title: "OK")
-                .show()
-        } else {
-            performSegue(withIdentifier: "toPhotoList", sender: nil)
-        }
-    }
-    
     /*
     // MARK: - Navigation
 
@@ -46,5 +35,4 @@ class TopViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
