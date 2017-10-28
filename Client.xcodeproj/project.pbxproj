@@ -17,6 +17,7 @@
 		0D36B35B1F9C3D6300C8B91A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B3591F9C3D6200C8B91A /* UIApplication+Extension.swift */; };
 		0D36B35C1F9C3D6300C8B91A /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36B35A1F9C3D6300C8B91A /* UIAlertController+Extension.swift */; };
 		0D38680D1F9C608000436C42 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D38680C1F9C608000436C42 /* CustomTableViewCell.swift */; };
+		0DB064D11FA4579000BFA115 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB064D01FA4579000BFA115 /* AnalysisViewController.swift */; };
 		0DB110941F9BC8A300E5C68A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB110931F9BC8A300E5C68A /* AppDelegate.swift */; };
 		0DB110991F9BC8A300E5C68A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB110971F9BC8A300E5C68A /* Main.storyboard */; };
 		0DB1109B1F9BC8A300E5C68A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB1109A1F9BC8A300E5C68A /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		0D36B3591F9C3D6200C8B91A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extension.swift"; path = "Client/Extensions/UIApplication+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		0D36B35A1F9C3D6300C8B91A /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Extension.swift"; path = "Client/Extensions/UIAlertController+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		0D38680C1F9C608000436C42 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		0DB064D01FA4579000BFA115 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		0DB110901F9BC8A300E5C68A /* Photori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB110931F9BC8A300E5C68A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB110981F9BC8A300E5C68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				0D36B34F1F9C34FC00C8B91A /* SignUpViewController.swift */,
 				0D36B3461F9C336A00C8B91A /* TopViewController.swift */,
 				0D36B3511F9C38C400C8B91A /* PhotoListViewController.swift */,
+				0DB064D01FA4579000BFA115 /* AnalysisViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				0D36B3581F9C3C8800C8B91A /* Constant.swift in Sources */,
 				0D36B3521F9C38C400C8B91A /* PhotoListViewController.swift in Sources */,
 				0D36B35B1F9C3D6300C8B91A /* UIApplication+Extension.swift in Sources */,
+				0DB064D11FA4579000BFA115 /* AnalysisViewController.swift in Sources */,
 				0D36B34E1F9C347000C8B91A /* UITextField+Extension.swift in Sources */,
 				0D36B3551F9C3C3300C8B91A /* User.swift in Sources */,
 				0D38680D1F9C608000436C42 /* CustomTableViewCell.swift in Sources */,
