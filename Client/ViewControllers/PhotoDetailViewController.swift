@@ -18,7 +18,6 @@ class PhotoDetailViewController: UIViewController {
 
         imageView.image = selectedImg
         imageView.contentMode = UIViewContentMode.scaleAspectFit
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,14 +27,12 @@ class PhotoDetailViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func downloadImage(_ sender: UIBarButtonItem) {
         UIImageWriteToSavedPhotosAlbum(selectedImg, self, #selector(self.showResultOfSaveImage(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    // 保存を試みた結果をダイアログで表示
     @objc func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
         
         var title = "保存完了"
@@ -51,15 +48,4 @@ class PhotoDetailViewController: UIViewController {
             .show()
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

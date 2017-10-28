@@ -20,7 +20,6 @@ class PhotoListViewController: UIViewController {
         super.viewDidLoad()
 
         self.photoCollectionView?.backgroundColor = UIColor.clear
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,19 +30,7 @@ class PhotoListViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -51,7 +38,6 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // Cell はストーリーボードで設定したセルのID
         let cell =
             collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell",
                                                for: indexPath)
@@ -68,7 +54,6 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellSize: CGFloat = self.view.frame.size.width / 3 - 1.5
-        // 正方形で返すためにwidth,heightを同じにする
         return CGSize(width: cellSize, height: cellSize)
     }
     
@@ -80,20 +65,16 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
         return photos.count
     }
     
-    // Cell が選択された場合
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        // [indexPath.row] から画像名を探し、UImage を設定
         selectedImage = UIImage(named: photos[(indexPath as NSIndexPath).row])
         if selectedImage != nil {
-            // SubViewController へ遷移するために Segue を呼び出す
             performSegue(withIdentifier: "toDetail", sender: nil)
         }
         
     }
     
-    // Segue 準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "toDetail" {
             let photoDetailViewController: PhotoDetailViewController = (segue.destination as? PhotoDetailViewController)!
