@@ -26,6 +26,9 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func createAccountButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "toAnalysis", sender: nil)
+    }
     /*
      // MARK: - Navigation
      

@@ -10,9 +10,16 @@ import UIKit
 
 class AnalysisViewController: UIViewController {
 
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        timer = Timer.scheduledTimer(timeInterval: 5.0,
+            target: self,
+            selector: #selector(AnalysisViewController.changeView),
+            userInfo: nil,
+            repeats: false)
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +28,9 @@ class AnalysisViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @objc func changeView() {
+        performSegue(withIdentifier: "toComplete", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

@@ -74,21 +74,27 @@
             </objects>
             <point key="canvasLocation" x="76" y="-240.62968515742131"/>
         </scene>
-        <!--写真閲覧-->
+        <!--Photo Library-->
         <scene sceneID="FQK-WD-gOf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTg-BP-Uw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mUj-4S-lG3" customClass="PhotoListViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHW-hZ-Wk1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="B3w-7S-7gp">
+                                <rect key="frame" x="96" y="26" width="182" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="n7O-j9-syh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="写真閲覧" id="jah-Ch-0BB"/>
+                    <navigationItem key="navigationItem" title="Photo Library" id="jah-Ch-0BB"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KTg-BP-Uw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2438" y="505"/>
+            <point key="canvasLocation" x="2438" y="519"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4a-Ms-l7V">
@@ -167,6 +173,9 @@
                                 <state key="normal" title="Create" backgroundImage="button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountButtonAction:" destination="EyE-JI-RLA" eventType="touchUpInside" id="Lkz-Ba-rsJ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progress1" translatesAutoresizingMaskIntoConstraints="NO" id="9PP-Pd-XGw">
                                 <rect key="frame" x="37" y="99" width="292" height="54"/>
@@ -178,7 +187,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create Account" id="mRP-og-2d2"/>
                     <connections>
-                        <segue destination="8Zg-D4-2j5" kind="show" id="S1O-Iq-byH"/>
+                        <segue destination="8Zg-D4-2j5" kind="show" identifier="toAnalysis" id="S1O-Iq-byH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiL-2g-syk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,7 +241,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Analysis" id="0Gb-Dy-gII"/>
                     <connections>
-                        <segue destination="Llx-AM-2Wg" kind="show" id="SUd-1k-WU2"/>
+                        <segue destination="Llx-AM-2Wg" kind="show" identifier="toComplete" id="qKl-CJ-n82"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovf-TW-SGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,7 +251,7 @@
         <!--Finish-->
         <scene sceneID="CRt-th-NMX">
             <objects>
-                <viewController id="Llx-AM-2Wg" customClass="CompleteSignupViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Llx-AM-2Wg" customClass="CompleteSignupViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bC2-Se-QJM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,6 +295,9 @@
                                 <state key="normal" title="OK" backgroundImage="button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mUj-4S-lG3" kind="show" id="o27-GN-AnT"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progress3" translatesAutoresizingMaskIntoConstraints="NO" id="tbo-nN-oyj">
                                 <rect key="frame" x="41" y="96" width="292" height="54"/>
@@ -295,7 +307,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="wcQ-L2-hQd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Finish" id="ilx-Gr-sBW"/>
+                    <navigationItem key="navigationItem" title="Finish" leftItemsSupplementBackButton="YES" id="ilx-Gr-sBW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIB-61-Ytv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
