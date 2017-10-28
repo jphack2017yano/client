@@ -9,54 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--トップ-->
+        <!--Sign Up-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="t2M-fk-uv6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TopIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gVU-Rh-zlI">
-                                <rect key="frame" x="67" y="126" width="240" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-q0-8dP">
-                                <rect key="frame" x="67" y="274" width="280" height="227"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="TopButton"/>
-                                <connections>
-                                    <action selector="switchToPhotoList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2T2-je-Icn"/>
-                                </connections>
-                            </button>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="h3z-mf-TCF">
-                                <rect key="frame" x="-142" y="636" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h3z-mf-TCF" id="IBI-jh-6I1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJq-LA-iZx">
-                                <rect key="frame" x="49" y="528" width="276" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="TopSignInButton"/>
-                                <connections>
-                                    <segue destination="EyE-JI-RLA" kind="show" id="SAh-8F-JPb"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="トップ" id="I0b-De-rYm"/>
-                    <connections>
-                        <segue destination="mUj-4S-lG3" kind="show" identifier="toPhotoList" id="5hp-3f-Wwp"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Sign Up" id="I0b-De-rYm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,55 +28,14 @@
         <!--写真閲覧-->
         <scene sceneID="FQK-WD-gOf">
             <objects>
-                <viewController id="mUj-4S-lG3" customClass="PhotoListViewController" customModule="Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mUj-4S-lG3" customClass="PhotoListViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHW-hZ-Wk1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background_List" translatesAutoresizingMaskIntoConstraints="NO" id="LPI-i9-mZc">
-                                <rect key="frame" x="-104" y="-11" width="589" height="738"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="237" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="O8X-CO-7l2">
-                                <rect key="frame" x="0.0" y="37" width="375" height="630"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="237" id="nJ0-ff-7Sw" customClass="CustomTableViewCell" customModule="Photori">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="237"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nJ0-ff-7Sw" id="KXZ-XA-Fof">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BlueBoard" translatesAutoresizingMaskIntoConstraints="NO" id="BvD-RK-HQc">
-                                                    <rect key="frame" x="0.0" y="8" width="375" height="229"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-eM-GSX">
-                                                    <rect key="frame" x="57" y="41" width="261" height="156"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="cardImageButton" destination="5WT-eM-GSX" id="bFo-Ka-ycw"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="mUj-4S-lG3" id="eCU-nz-BGy"/>
-                                    <outlet property="delegate" destination="mUj-4S-lG3" id="XXC-k5-4ar"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="n7O-j9-syh"/>
                     </view>
                     <navigationItem key="navigationItem" title="写真閲覧" id="jah-Ch-0BB"/>
-                    <connections>
-                        <outlet property="tableView" destination="O8X-CO-7l2" id="Tfq-KN-heF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTg-BP-Uw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,58 +57,17 @@
             </objects>
             <point key="canvasLocation" x="-716" y="-241"/>
         </scene>
-        <!--ユーザ登録-->
+        <!--Create Account-->
         <scene sceneID="pqN-zF-nLI">
             <objects>
-                <viewController id="EyE-JI-RLA" customClass="SignUpViewController" customModule="Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EyE-JI-RLA" customClass="SignUpViewController" customModule="Photori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QHq-Im-Lew">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="p4z-wn-LKC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="yf9-tF-eYI">
-                                <rect key="frame" x="69" y="272" width="247" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4c-rS-yjH">
-                                <rect key="frame" x="69" y="364" width="247" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKV-v9-HmT">
-                                <rect key="frame" x="49" y="476" width="276" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="SignInButton"/>
-                                <connections>
-                                    <action selector="signIn:" destination="EyE-JI-RLA" eventType="touchUpInside" id="pJh-TB-lZO"/>
-                                </connections>
-                            </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hcu-tN-fV1">
-                                <rect key="frame" x="67" y="87" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="g9G-0C-HDB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ユーザ登録" id="mRP-og-2d2"/>
-                    <connections>
-                        <outlet property="mailAddressTextField" destination="S4c-rS-yjH" id="0hO-xN-NGV"/>
-                        <outlet property="myImage" destination="Hcu-tN-fV1" id="CFX-eS-ixT"/>
-                        <outlet property="userNameTextField" destination="yf9-tF-eYI" id="DPu-41-UAx"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToTop" id="WNQ-iJ-RId"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Create Account" id="mRP-og-2d2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiL-2g-syk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="gU2-47-0kR">
@@ -199,16 +80,4 @@
             <point key="canvasLocation" x="832.79999999999995" y="-240.62968515742131"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Background" width="375" height="667"/>
-        <image name="Background_List" width="411" height="703"/>
-        <image name="BlueBoard" width="333" height="279"/>
-        <image name="SignInButton" width="276" height="58"/>
-        <image name="TopButton" width="188" height="185"/>
-        <image name="TopIcon" width="304" height="85"/>
-        <image name="TopSignInButton" width="276" height="58"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="WNQ-iJ-RId"/>
-    </inferredMetricsTieBreakers>
 </document>
