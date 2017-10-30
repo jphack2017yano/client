@@ -1,24 +1,25 @@
 //
-//  TopViewController.swift
+//  CompleteSignupViewController.swift
 //  Client
 //
-//  Created by 会津慎弥 on 2017/10/22.
+//  Created by 会津慎弥 on 2017/10/28.
 //  Copyright © 2017年 会津慎弥. All rights reserved.
 //
 
 import UIKit
 
-class TopViewController: UIViewController {
-
+class CompleteSignupViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        self.navigationItem.hidesBackButton = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

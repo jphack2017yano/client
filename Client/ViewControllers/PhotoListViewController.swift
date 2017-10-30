@@ -7,59 +7,103 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PhotoListViewController: UIViewController {
-
-    let images = ["01", "02", "03"]
     
-    @IBOutlet weak var tableView: UITableView!
+    var photos: [JSON] = []
+    
+    @IBOutlet weak var photoCollectionView: UICollectionView!
+    
+    var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.backgroundColor = UIColor.clear
-        // Do any additional setup after loading the view.
+        
+        self.photoCollectionView?.backgroundColor = UIColor.clear
+        reloadShowPhotoList()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func reloadShowPhotoList() {
+        Alamofire.request(Constant.URL().getPhotoListURL())
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    let jsonObj = JSON(response.result.value ?? "null")
+                    if let data = jsonObj.arrayValue as [JSON]? {
+                        self.photos = data
+                        self.photoCollectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+        }
     }
-    */
-
 }
 
-extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // セルを取得する
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! CustomTableViewCell
-        cell.cardImageButton.image = UIImage(named: images[indexPath.row])
-        cell.backgroundColor = UIColor.clear
-        // セルに表示する値を設定する
+extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell =
+            collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell",
+                                               for: indexPath)
+        
+        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        
+        let photoInfo = photos[(indexPath as NSIndexPath).row]
+        let url = URL(string: Constant.URL().getPhotoURL() + photoInfo["url"].string!)
+        let data = try? Data(contentsOf: url!)
+        let cellImage = UIImage(data: data!)
+        imageView.image = cellImage
+        
         return cell
     }
     
-    /// セルの個数を指定するデリゲートメソッド（必須）
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return images.count
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellSize: CGFloat = self.view.frame.size.width / 3 - 1.5
+        return CGSize(width: cellSize, height: cellSize)
     }
     
-    /// セルが選択された時に呼ばれるデリゲートメソッド
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        let url = URL(string: Constant.URL().getPhotoURL() + photos[(indexPath as NSIndexPath).row].string!)
+        let data = try? Data(contentsOf: url!)
+        selectedImage = UIImage(data: data!)
+        if selectedImage != nil {
+            performSegue(withIdentifier: "toDetail", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if segue.identifier == "toDetail" {
+            let photoDetailViewController: PhotoDetailViewController = (segue.destination as? PhotoDetailViewController)!
+            photoDetailViewController.selectedImg = selectedImage
+        }
     }
 }

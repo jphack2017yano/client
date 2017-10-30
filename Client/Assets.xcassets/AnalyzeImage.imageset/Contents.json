@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "background70.png",
+      "filename" : "turn.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "background70-1.png",
+      "filename" : "turn-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "background70-2.png",
+      "filename" : "turn-2.png",
       "scale" : "3x"
     }
   ],

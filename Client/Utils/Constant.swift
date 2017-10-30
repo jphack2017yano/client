@@ -15,4 +15,18 @@ struct Constant {
         let address = "address"
     }
     
+    struct URL {
+        let baseURL = "http://ec2-18-216-61-164.us-east-2.compute.amazonaws.com/"
+        let getPhotoURI =  "image/download?id=jphacks2017"
+        let photoURI = "photos/"
+    
+        func getPhotoListURL() -> String {
+            return baseURL + getPhotoURI
+        }
+        
+        func getPhotoURL() -> String {
+            return baseURL + photoURI
+        }
+    }
+    
 }
