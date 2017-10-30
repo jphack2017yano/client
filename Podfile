@@ -9,6 +9,8 @@ target 'Client' do
   pod 'SwiftLint'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   target 'ClientTests' do
     inherit! :search_paths

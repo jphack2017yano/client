@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PhotoListViewController: UIViewController {
     
-    let photos = ["01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03", "01", "02", "03"]
+    var photos: [JSON] = []
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
@@ -18,10 +20,11 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.photoCollectionView?.backgroundColor = UIColor.clear
+        reloadShowPhotoList()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -30,6 +33,23 @@ class PhotoListViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func reloadShowPhotoList() {
+        Alamofire.request(Constant.URL().getPhotoListURL())
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    let jsonObj = JSON(response.result.value ?? "null")
+                    if let data = jsonObj.arrayValue as [JSON]? {
+                        self.photos = data
+                        self.photoCollectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+        }
     }
 }
 
@@ -43,7 +63,11 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
                                                for: indexPath)
         
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
-        let cellImage = UIImage(named: photos[(indexPath as NSIndexPath).row])
+        
+        let photoInfo = photos[(indexPath as NSIndexPath).row]
+        let url = URL(string: Constant.URL().getPhotoURL() + photoInfo["url"].string!)
+        let data = try? Data(contentsOf: url!)
+        let cellImage = UIImage(data: data!)
         imageView.image = cellImage
         
         return cell
@@ -68,11 +92,12 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        selectedImage = UIImage(named: photos[(indexPath as NSIndexPath).row])
+        let url = URL(string: Constant.URL().getPhotoURL() + photos[(indexPath as NSIndexPath).row].string!)
+        let data = try? Data(contentsOf: url!)
+        selectedImage = UIImage(data: data!)
         if selectedImage != nil {
             performSegue(withIdentifier: "toDetail", sender: nil)
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {

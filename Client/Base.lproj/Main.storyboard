@@ -228,7 +228,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pg6-s0-1BC">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pg6-s0-1BC">
                                         <rect key="frame" x="34" y="474" width="267" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
@@ -257,7 +257,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccountButtonAction:" destination="EyE-JI-RLA" eventType="touchUpInside" id="Lkz-Ba-rsJ"/>
+                                            <action selector="createAccountButtonAction:" destination="EyE-JI-RLA" eventType="touchUpInside" id="wfh-Lc-3wC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -269,9 +269,9 @@
                     <navigationItem key="navigationItem" title="Create Account" id="mRP-og-2d2"/>
                     <connections>
                         <outlet property="addScroll" destination="aCI-g8-c18" id="9nj-Ea-Uud"/>
-                        <outlet property="confirmPasswordTextField" destination="Pg6-s0-1BC" id="KwR-5t-9Fz"/>
-                        <outlet property="passwordTextField" destination="5x7-It-AIT" id="Aut-Vv-E3z"/>
-                        <outlet property="userNameTextField" destination="p0D-cb-k3u" id="cy2-An-D9X"/>
+                        <outlet property="confirmPasswordTextField" destination="Pg6-s0-1BC" id="2w9-px-6FA"/>
+                        <outlet property="passwordTextField" destination="5x7-It-AIT" id="HdL-XT-2mg"/>
+                        <outlet property="userNameTextField" destination="p0D-cb-k3u" id="hvl-vC-XNH"/>
                         <segue destination="8Zg-D4-2j5" kind="show" identifier="toAnalysis" id="S1O-Iq-byH"/>
                     </connections>
                 </viewController>
