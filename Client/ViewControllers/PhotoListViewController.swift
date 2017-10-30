@@ -92,7 +92,8 @@ extension PhotoListViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let url = URL(string: Constant.URL().getPhotoURL() + photos[(indexPath as NSIndexPath).row].string!)
+        let photoInfo = photos[(indexPath as NSIndexPath).row]
+        let url = URL(string: Constant.URL().getPhotoURL() + photoInfo["url"].string!)
         let data = try? Data(contentsOf: url!)
         selectedImage = UIImage(data: data!)
         if selectedImage != nil {
